@@ -1,0 +1,91 @@
+import './App.css';
+import { useState } from 'react';
+import AboutSection from './components/AboutSection';
+import ContactSection from './components/ContactSection';
+import IntroSection from './components/IntroSection';
+import MenuBar from './components/MenuBar';
+import PortfolioSection from './components/PortfolioSection';
+import ResumeSection from './components/ResumeSection';
+import ServicesSection from './components/ServicesSection';
+import Sidebar from './components/Sidebar';
+import SkillsSection from './components/SkillsSection';
+import SimpleSlider from './components/Slider';
+
+const App = () => {
+  const [sliderVisible, setSliderVisible] = useState(false);
+  const [sliderImages, setSliderImages] = useState([]);
+
+  const showSlider = (images) => {
+    setSliderImages(images);
+    setSliderVisible(true);
+  };
+
+  const projectImages = {
+    eduport: [
+      '/assets/images/eduport-1.png',
+      '/assets/images/eduport-2.png',
+      '/assets/images/eduport-3.png',
+      '/assets/images/eduport-4.png',
+    ],
+    sectech: [
+      '/assets/images/sectech-1.png',
+      '/assets/images/sectech-2.png',
+      '/assets/images/sectech-3.png',
+      '/assets/images/sectech-4.png',
+      '/assets/images/sectech-5.png',
+      '/assets/images/sectech-6.png',
+    ],
+    digital: [
+      '/assets/images/digital-market.png',
+      '/assets/images/digital-market2.png',
+      '/assets/images/digital-market3.png',
+      '/assets/images/digital-market4.png',
+      '/assets/images/digital-market5.png',
+      
+    ],
+    
+    learningSkills: [
+      '/assets/images/learning-skills-1.png',
+      '/assets/images/learning-skills-2.png',
+      '/assets/images/learning-skills-3.png',
+      '/assets/images/learning-skills-4.png',
+      '/assets/images/learning-skills-5.png',
+      '/assets/images/learning-skills-6.png',
+      '/assets/images/learning-skills-7.png',
+      '/assets/images/learning-skills-8.png',
+      '/assets/images/learning-skills-9.png',
+      '/assets/images/learning-skills-10.png',
+    ],
+    boldo: [
+      '/assets/images/boldo-1.png',
+      '/assets/images/boldo-2.png',
+      '/assets/images/boldo-3.png',
+      '/assets/images/boldo-4.png',
+      '/assets/images/boldo-5.png',
+      '/assets/images/boldo-6.png',
+      '/assets/images/boldo-7.png',
+      '/assets/images/boldo-8.png',
+      '/assets/images/boldo-9.png',
+      '/assets/images/boldo-10.png',
+      '/assets/images/boldo-11.png',
+
+    ],
+  };
+
+  return (
+    <div className="container-fluid py-lg-4 py-4 my-xl-3 my-lg-3 my-md-3 my-0 overflow-hidden">
+      <MenuBar />
+      <Sidebar />
+      <IntroSection />
+      <AboutSection />
+      <ResumeSection />
+      <ServicesSection />
+      <SkillsSection />
+      <PortfolioSection onProjectClick={showSlider} projectImages={projectImages} />
+      <ContactSection />
+      <SimpleSlider images={sliderImages} isVisible={sliderVisible} onClose={() => setSliderVisible(false)} />
+    </div>
+  );
+};
+
+export default App;
