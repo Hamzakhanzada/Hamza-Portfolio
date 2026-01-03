@@ -83,7 +83,7 @@ const PortfolioSection = ({ onProjectClick, projectImages }) => {
               <li>CSS</li>
               <li>Bootstrap</li>
             </ul>
-          </div>
+          </div> 
           <h2>
             <a href="https://boldo-website-template.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-light">
             Boldo Website Template 

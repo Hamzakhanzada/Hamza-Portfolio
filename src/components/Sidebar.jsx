@@ -24,7 +24,7 @@ function Sidebar() {
           </div>
           <div className="my-4 d-flex justify-content-center align-items-center">
             <img
-              src="./assets/images/hamza.png"
+              src="./assets/images/hamza_new.png"
               height={230}
               width={230}
               className="rounded-4 mb-1 my-img"
